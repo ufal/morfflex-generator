@@ -1,0 +1,27 @@
+# Here are allowed (known) "derivational comment types".
+#
+# The syntax of a derivational comment of type DTYPE is
+#   (DTYPE[0-9]+suffix)
+# or
+#   (DTYPE*reference)
+# The reference is either explicitly provided as in
+# the latter case, or in the former case it is formed
+# from the lemma by removing the specified number
+# of characters and appending `suffix`.
+#
+# For each derivational comment type, there are 3 possible values:
+#
+# - hidden: derivation comment type is allowed, but not visible in
+#   the generated dictinary
+#
+# - visible_noninheritable: derivation comment type is visible in
+#   the generated dictonary, but only for the unchanged lemma
+#   (i.e., it is not inherited by automatically derived lemmas)
+#
+# - visible_inheritable: derivation comment type is visible in
+#   the generated dictonary and is inherited by automatically
+#   derived lemmas
+
+^DD*  visible_inheritable
+
+*     hidden
